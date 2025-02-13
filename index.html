@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="practice.css">
+  <title>Document</title>
+</head>
+<body>
+  <p class="heading">Todo list</p>
+  <div class="container">
+    <div><input class="name" type="text" placeholder="Enter List Items"></div>
+    <div> <input class="date" type="date"> </div>
+    <div> <button onclick="
+    addlist();
+    updateList();
+    " class="add">Add</button>  </div></div>
+    <div class="container2"></div>
+
+    <script>
+      let todo=[];
+      let todate=[];
+      
+      // console.log(todo);
+      function addlist(){
+        todo.push(document.querySelector('.name').value);
+        todate.push(document.querySelector('.date').value);
+        // console.log(todo);
+      }
+      function updateList(){
+        let list='';
+      for( i=0 ; i < todo.length; i++){
+        list+=
+        `<div class="
+        _todo"><p>${todo[i]}</p></div>
+        <div class="_todate"><p>${todate[i]}</p></div>
+        <div><button class="del" onclick="
+         todo.splice(${i},1);
+         todate.splice(${i},1);
+         updateList();
+         ">Delete</button></div>`;
+         
+      }
+      document.querySelector('.container2').innerHTML=list;
+      // console.log(html);
+      }
+    </script>
+</body>
+</html>
