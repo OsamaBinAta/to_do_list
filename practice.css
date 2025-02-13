@@ -1,6 +1,6 @@
 *{
   font-family: Arial, Helvetica, sans-serif;
-  font-size:15px
+  font-size:1rem;
 }
 .container{
   display:flex;
@@ -51,4 +51,91 @@ color: white;
 }
 .heading{
   font-weight: 600;
+}
+@media only screen and (max-width: 600px){
+
+body{
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  height:100vh;
+   /* border: 1px solid black;  */
+  align-items: center;
+}
+
+.head{
+  align-self:center;
+ 
+}
+.head p{
+  font-size: 20px;
+}
+
+.container{
+  display:grid;
+  width:310px;
+  height: 120px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25px 25px 40px;
+  grid-template-areas: 
+  "_date"
+  "_name"
+  "_add";
+  /* border:1px solid black;   */
+  margin-bottom:10px;
+  justify-items: center;
+  align-content: center;
+  row-gap:10px;
+}
+
+.container2{
+  display:grid;
+  grid-template-columns: 120px 80px 60px;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  width:300px;
+   /* border:1px solid black;  */
+  column-gap: 10px; 
+  row-gap: 10px;
+
+}
+
+._name{
+  grid-area: _name;
+ 
+}
+.name{
+  height: 25px;
+}
+.date{
+  height: 25px;
+}
+._date{
+  grid-area: _date;
+  
+}
+._add{
+  grid-area: _add;
+}
+._todo p{
+  width:120px;
+  font-size: 14px;
+  overflow-wrap: break-word;
+ /* border: 1px solid black;  */
+}
+._todate p{
+  width:80px;
+  font-size:14px;
+  overflow-wrap: break-word;
+   /* border: 1px solid black;  */
+}
+
+.del{
+  height: 30px;
+width: 60px;
+border: none;
+background-color: rgb(167, 25, 6); 
+color: white;
+}
 }
